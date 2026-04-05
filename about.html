@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Adventure Club</title>
+    <title>About Us | MountainPulse</title>
     <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
+    <!-- Navigation -->
     <nav>
         <div class="logo">MountainPulse</div>
         <ul>
@@ -16,9 +17,177 @@
         </ul>
     </nav>
 
-    <section class="content">
-        <h2>Our Mission</h2>
-        <p>We started in 2024 with a simple goal: to get people off their screens and into the wild. From weekend hikes to mountain summits, we do it all.</p>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-bg-number" style="top: 10%; right: 5%; z-index: 1;">02</div>
+        <div class="hero-content">
+            <h1 class="display-hero">Built For<br><span class="text-accent">Adventurers</span></h1>
+            <p class="body-lg">Since 2012, we've been pushing boundaries and creating a community of people who refuse to settle for ordinary.</p>
+        </div>
+    </header>
+
+    <!-- Our Story -->
+    <section class="section border-b-2">
+        <div class="container-tight">
+            <h2 class="display-md mb-16">Our Story</h2>
+            <p class="body mb-12">MountainPulse began as a small group of mountaineers meeting in a cramped hostel room in Nepal. We were strangers united by one thing: the irresistible call of the mountains.</p>
+            <p class="body mb-12">From those humble beginnings—a shared dream and a worn climbing rope—we've grown into a global movement. Today, thousands of adventurers across continents trust us to guide them to their next summit, their next victory, their next transformation.</p>
+            <p class="body">We don't just organize expeditions. We create opportunities for people to discover parts of themselves they never knew existed. Every peak conquered is a barrier broken. Every friendship forged is a bond that lasts.</p>
+        </div>
     </section>
+
+    <!-- Our Values -->
+    <section class="section bg-muted border-b-2">
+        <div class="container">
+            <h2 class="display-lg mb-16">Our Values</h2>
+            <div class="grid md:grid-cols-3">
+                <div style="padding: var(--space-12);">
+                    <div style="font-size: var(--text-6xl); font-weight: 900; color: var(--accent); margin-bottom: var(--space-8); line-height: 1;">01</div>
+                    <h3 class="heading-lg mb-4">Courage</h3>
+                    <p class="body">We face the unknown head-on. Fear drives us forward, not backward.</p>
+                </div>
+                <div style="padding: var(--space-12);">
+                    <div style="font-size: var(--text-6xl); font-weight: 900; color: var(--accent); margin-bottom: var(--space-8); line-height: 1;">02</div>
+                    <h3 class="heading-lg mb-4">Integrity</h3>
+                    <p class="body">Safety, honesty, and accountability drive every decision we make.</p>
+                </div>
+                <div style="padding: var(--space-12);">
+                    <div style="font-size: var(--text-6xl); font-weight: 900; color: var(--accent); margin-bottom: var(--space-8); line-height: 1;">03</div>
+                    <h3 class="heading-lg mb-4">Excellence</h3>
+                    <p class="body">We deliver world-class experiences with uncompromising quality.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Team -->
+    <section class="section">
+        <div class="container">
+            <h2 class="display-lg mb-16">Leadership Team</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3">
+                <!-- Team Member 1 -->
+                <div class="card">
+                    <div class="label mb-4">Founder & CEO</div>
+                    <h3 class="card-title">Alex Sherpa</h3>
+                    <p class="card-description">Everest summiteer and mountaineering veteran with 20+ years leading expeditions across all seven continents.</p>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="card">
+                    <div class="label mb-4">Chief Safety Officer</div>
+                    <h3 class="card-title">Riley Cross</h3>
+                    <p class="card-description">Former rescue coordinator with mountaineering certifications from Swiss Alpine Club. Obsessed with safety protocols.</p>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="card">
+                    <div class="label mb-4">Head of Training</div>
+                    <h3 class="card-title">Morgan Peak</h3>
+                    <p class="card-description">Certified climbing instructor and alpine guide. Crafts programs that transform beginners into accomplished mountaineers.</p>
+                </div>
+
+                <!-- Team Member 4 -->
+                <div class="card">
+                    <div class="label mb-4">Operations Director</div>
+                    <h3 class="card-title">Jordan Steele</h3>
+                    <p class="card-description">Logistics expert managing expeditions to 50+ destinations. Make sure every climb runs flawlessly.</p>
+                </div>
+
+                <!-- Team Member 5 -->
+                <div class="card">
+                    <div class="label mb-4">Community Lead</div>
+                    <h3 class="card-title">Casey Worth</h3>
+                    <p class="card-description">Passionate about building inclusive communities. Ensures every member feels valued and supported.</p>
+                </div>
+
+                <!-- Team Member 6 -->
+                <div class="card">
+                    <div class="label mb-4">Tech Lead</div>
+                    <h3 class="card-title">Taylor Kai</h3>
+                    <p class="card-description">Software architect building the platforms that connect adventurers. Outdoor enthusiast and problem solver.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="section bg-muted border-y-2">
+        <div class="container">
+            <h2 class="display-lg mb-16">Our Journey</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div style="padding: var(--space-8); border-left: 4px solid var(--accent);">
+                    <h3 class="heading-lg mb-4">2012</h3>
+                    <p class="body">Founded MountainPulse with 5 core members and a mission to change adventure forever.</p>
+                </div>
+                <div style="padding: var(--space-8); border-left: 4px solid var(--accent);">
+                    <h3 class="heading-lg mb-4">2015</h3>
+                    <p class="body">Expanded to 20 countries. Launched first structured training programs for aspiring mountaineers.</p>
+                </div>
+                <div style="padding: var(--space-8); border-left: 4px solid var(--accent);">
+                    <h3 class="heading-lg mb-4">2018</h3>
+                    <p class="body">Hit 1,000+ active members. Established MountainPulse Academy for professional guide certification.</p>
+                </div>
+                <div style="padding: var(--space-8); border-left: 4px solid var(--accent);">
+                    <h3 class="heading-lg mb-4">2021</h3>
+                    <p class="body">Crossed 2,500 members. Launched digital platform connecting global adventure community in real-time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section bg-accent">
+        <div class="container">
+            <div class="flex flex-col flex-center">
+                <h2 class="display-lg mb-8">Be Part Of<br>This Movement</h2>
+                <p class="body-lg mb-16" style="color: var(--accent-foreground); max-width: 600px;">Join a community of world-class adventurers. Push your boundaries. Discover extraordinary places. Create unforgettable memories.</p>
+                <a href="contact.html" class="btn primary">Start Your Adventure</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="padding: var(--space-12); border-top: 2px solid var(--border); display: grid; gap: var(--space-8);">
+        <div class="grid md:grid-cols-4 lg:grid-cols-4">
+            <div>
+                <h3 class="heading-md mb-8">Platform</h3>
+                <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--space-4);">
+                    <li><a href="home.html" class="body hover:text-accent transition-colors">Home</a></li>
+                    <li><a href="about.html" class="body hover:text-accent transition-colors">About</a></li>
+                    <li><a href="#" class="body hover:text-accent transition-colors">Features</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="heading-md mb-8">Community</h3>
+                <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--space-4);">
+                    <li><a href="#" class="body hover:text-accent transition-colors">Forum</a></li>
+                    <li><a href="#" class="body hover:text-accent transition-colors">Events</a></li>
+                    <li><a href="#" class="body hover:text-accent transition-colors">Blog</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="heading-md mb-8">Resources</h3>
+                <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--space-4);">
+                    <li><a href="#" class="body hover:text-accent transition-colors">Guides</a></li>
+                    <li><a href="#" class="body hover:text-accent transition-colors">Training</a></li>
+                    <li><a href="#" class="body hover:text-accent transition-colors">Support</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="heading-md mb-8">Legal</h3>
+                <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--space-4);">
+                    <li><a href="#" class="body hover:text-accent transition-colors">Privacy</a></li>
+                    <li><a href="#" class="body hover:text-accent transition-colors">Terms</a></li>
+                    <li><a href="contact.html" class="body hover:text-accent transition-colors">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t-2 pt-8">
+            <p class="label">© 2026 MountainPulse Adventure Club. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="JS/marquee.js"></script>
 </body>
 </html>

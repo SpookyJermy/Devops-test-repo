@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Adventure Club</title>
+    <title>Join Us | MountainPulse</title>
     <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
+    <!-- Navigation -->
     <nav>
         <div class="logo">MountainPulse</div>
         <ul>
@@ -16,13 +17,219 @@
         </ul>
     </nav>
 
-    <section class="content">
-        <h2>Ready for an Adventure?</h2>
-        <form>
-            <input type="text" placeholder="Your Name">
-            <input type="email" placeholder="Your Email">
-            <button type="submit" class="btn">Send Request</button>
-        </form>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-bg-number" style="bottom: 5%; left: -5%; z-index: 1;">03</div>
+        <div class="hero-content">
+            <h1 class="display-hero">Join The<br><span class="text-accent">Adventure</span></h1>
+            <p class="body-lg">Take the first step towards extraordinary experiences. Fill out the form below and our team will get in touch within 24 hours.</p>
+        </div>
+    </header>
+
+    <!-- Contact Form Section -->
+    <section class="section border-b-2">
+        <div class="container-tight">
+            <form style="max-width: 100%; display: grid; gap: var(--space-12);">
+                <!-- Name Field -->
+                <div class="form-group">
+                    <label class="form-label" for="name">Full Name</label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        placeholder="Your Full Name"
+                        required
+                    >
+                </div>
+
+                <!-- Email Field -->
+                <div class="form-group">
+                    <label class="form-label" for="email">Email Address</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="your@email.com"
+                        required
+                    >
+                </div>
+
+                <!-- Experience Level -->
+                <div class="form-group">
+                    <label class="form-label" for="experience">Experience Level</label>
+                    <select id="experience" name="experience" style="background-color: transparent; border: none; border-bottom: 2px solid var(--border); color: var(--foreground); font-family: inherit; font-size: var(--text-4xl); font-weight: 700; text-transform: uppercase; letter-spacing: -0.01em; padding: var(--space-4) 0; width: 100%; transition: all var(--duration-normal); cursor: pointer;" required>
+                        <option value="" style="background-color: var(--background); color: var(--foreground);">Select Level</option>
+                        <option value="beginner" style="background-color: var(--background); color: var(--foreground);">Beginner</option>
+                        <option value="intermediate" style="background-color: var(--background); color: var(--foreground);">Intermediate</option>
+                        <option value="advanced" style="background-color: var(--background); color: var(--foreground);">Advanced</option>
+                    </select>
+                </div>
+
+                <!-- Message Field -->
+                <div class="form-group">
+                    <label class="form-label" for="message">Tell Us About Your Goals</label>
+                    <textarea 
+                        id="message" 
+                        name="message" 
+                        placeholder="What mountains are you dreaming of conquering?"
+                        style="font-size: var(--text-2xl);"
+                    ></textarea>
+                </div>
+
+                <!-- Phone Field -->
+                <div class="form-group">
+                    <label class="form-label" for="phone">Phone Number</label>
+                    <input 
+                        type="tel" 
+                        id="phone" 
+                        name="phone" 
+                        placeholder="+1 (555) 123-4567"
+                    >
+                </div>
+
+                <!-- Preferred Contact -->
+                <div class="form-group">
+                    <label class="form-label" for="contact-method">Preferred Contact Method</label>
+                    <select id="contact-method" name="contact-method" style="background-color: transparent; border: none; border-bottom: 2px solid var(--border); color: var(--foreground); font-family: inherit; font-size: var(--text-4xl); font-weight: 700; text-transform: uppercase; letter-spacing: -0.01em; padding: var(--space-4) 0; width: 100%; transition: all var(--duration-normal); cursor: pointer;">
+                        <option value="" style="background-color: var(--background); color: var(--foreground);">Select Method</option>
+                        <option value="email" style="background-color: var(--background); color: var(--foreground);">Email</option>
+                        <option value="phone" style="background-color: var(--background); color: var(--foreground);">Phone</option>
+                        <option value="whatsapp" style="background-color: var(--background); color: var(--foreground);">WhatsApp</option>
+                    </select>
+                </div>
+
+                <!-- Submit Button -->
+                <div style="margin-top: var(--space-8);">
+                    <button type="submit" class="btn primary hover:scale-105" style="width: 100%; height: auto; padding: var(--space-8) var(--space-12); font-size: var(--text-lg);">
+                        Join MountainPulse Now
+                    </button>
+                </div>
+
+                <!-- Form Success Message (hidden by default) -->
+                <div id="success-message" style="display: none; padding: var(--space-12); background-color: var(--muted); border: 2px solid var(--accent); text-align: center;">
+                    <h3 class="heading-lg mb-4" style="color: var(--accent);">Thank You!</h3>
+                    <p class="body">We've received your application. Expect to hear from us within 24 hours.</p>
+                </div>
+            </form>
+        </div>
     </section>
+
+    <!-- FAQ Section -->
+    <section class="section bg-muted border-b-2">
+        <div class="container">
+            <h2 class="display-lg mb-16">Frequently Asked Questions</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div style="border: 2px solid var(--border); padding: var(--space-12);">
+                    <h3 class="heading-lg mb-8">How do I get started?</h3>
+                    <p class="body">Fill out the form above and our team will contact you. We'll discuss your experience level and help you find the perfect expedition.</p>
+                </div>
+                <div style="border: 2px solid var(--border); padding: var(--space-12);">
+                    <h3 class="heading-lg mb-8">Do I need prior experience?</h3>
+                    <p class="body">No! We welcome beginners. Our structured training programs will prepare you for any adventure at your pace and skill level.</p>
+                </div>
+                <div style="border: 2px solid var(--border); padding: var(--space-12);">
+                    <h3 class="heading-lg mb-8">What's the cost?</h3>
+                    <p class="body">Membership plans start at $99/month. Expedition costs vary by destination and difficulty. We offer flexible payment options.</p>
+                </div>
+                <div style="border: 2px solid var(--border); padding: var(--space-12);">
+                    <h3 class="heading-lg mb-8">When is the next expedition?</h3>
+                    <p class="body">We run expeditions year-round. Check our events calendar or contact us directly to find dates that work for you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="marquee-container">
+        <div class="marquee-wrapper speed-normal">
+            <div class="marquee-item large">2,500+</div>
+            <div class="marquee-item separator">•</div>
+            <div class="marquee-item">Members Adventuring</div>
+            <div class="marquee-item separator">•</div>
+            <div class="marquee-item large">50+</div>
+            <div class="marquee-item separator">•</div>
+            <div class="marquee-item">Peaks Conquered</div>
+            <div class="marquee-item separator">•</div>
+            <div class="marquee-item large">98%</div>
+            <div class="marquee-item separator">•</div>
+            <div class="marquee-item">Satisfaction Rate</div>
+            <div class="marquee-item separator">•</div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section bg-accent">
+        <div class="container">
+            <div class="flex flex-col flex-center">
+                <h2 class="display-lg mb-8">Ready To<br>Summit Your Peak?</h2>
+                <p class="body-lg mb-16" style="color: var(--accent-foreground); max-width: 600px;">Join thousands of adventurers pushing their limits and discovering the extraordinary within themselves.</p>
+                <a href="#" onclick="document.querySelector('form').scrollIntoView({ behavior: 'smooth' }); return false;" class="btn primary">Fill Out Application</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="padding: var(--space-12); border-top: 2px solid var(--border); display: grid; gap: var(--space-8);">
+        <div class="grid md:grid-cols-4 lg:grid-cols-4">
+            <div>
+                <h3 class="heading-md mb-8">Platform</h3>
+                <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--space-4);">
+                    <li><a href="home.html" class="body hover:text-accent transition-colors">Home</a></li>
+                    <li><a href="about.html" class="body hover:text-accent transition-colors">About</a></li>
+                    <li><a href="#" class="body hover:text-accent transition-colors">Features</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="heading-md mb-8">Community</h3>
+                <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--space-4);">
+                    <li><a href="#" class="body hover:text-accent transition-colors">Forum</a></li>
+                    <li><a href="#" class="body hover:text-accent transition-colors">Events</a></li>
+                    <li><a href="#" class="body hover:text-accent transition-colors">Blog</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="heading-md mb-8">Resources</h3>
+                <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--space-4);">
+                    <li><a href="#" class="body hover:text-accent transition-colors">Guides</a></li>
+                    <li><a href="#" class="body hover:text-accent transition-colors">Training</a></li>
+                    <li><a href="#" class="body hover:text-accent transition-colors">Support</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="heading-md mb-8">Legal</h3>
+                <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--space-4);">
+                    <li><a href="#" class="body hover:text-accent transition-colors">Privacy</a></li>
+                    <li><a href="#" class="body hover:text-accent transition-colors">Terms</a></li>
+                    <li><a href="contact.html" class="body hover:text-accent transition-colors">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t-2 pt-8">
+            <p class="label">© 2026 MountainPulse Adventure Club. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="JS/marquee.js"></script>
+    <script>
+        // Handle contact form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Hide form
+            const formFields = document.querySelectorAll('.form-group');
+            formFields.forEach(field => field.style.display = 'none');
+            
+            // Show success message
+            document.getElementById('success-message').style.display = 'block';
+            
+            // Reset form after 3 seconds
+            setTimeout(() => {
+                this.reset();
+                formFields.forEach(field => field.style.display = 'flex');
+                document.getElementById('success-message').style.display = 'none';
+            }, 3000);
+        });
+    </script>
 </body>
 </html>
