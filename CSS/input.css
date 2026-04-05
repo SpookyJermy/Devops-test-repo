@@ -162,7 +162,7 @@
     }
 
     /* Cards */
-    .card-base {
+    .card, .card-base {
         @apply border-2 border-border bg-background p-12 rounded-none transition-all duration-normal;
         
         &:hover {
@@ -175,12 +175,13 @@
     }
 
     .card-title {
-        @apply text-3xl font-bold uppercase -tracking-tightest mb-4 text-foreground transition-colors;
+        @apply text-3xl font-bold uppercase mb-4 text-foreground transition-colors;
         letter-spacing: -0.01em;
     }
 
     .card-description {
-        @apply text-base text-muted-foreground transition-colors;
+        @apply text-base text-muted-foreground transition-opacity duration-normal;
+        opacity: 1;
     }
 
     .card-label {
@@ -419,7 +420,7 @@
         @apply flex-col gap-4;
     }
 
-    .card-base {
+    .card, .card-base {
         @apply p-8;
     }
 

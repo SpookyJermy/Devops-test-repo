@@ -106,12 +106,9 @@ function initHoverAnimations() {
         });
         
         element.addEventListener('mouseleave', () => {
-            // Only hide on desktop
-            if (window.innerWidth >= 768) {
-                descriptions.forEach(desc => {
-                    desc.style.opacity = '0';
-                });
-            }
+            descriptions.forEach(desc => {
+                desc.style.opacity = '';
+            });
         });
     });
 }
