@@ -37,6 +37,7 @@
                         type="text" 
                         id="name" 
                         name="name" 
+                        class="form-input"
                         placeholder="Your Full Name"
                         required
                     >
@@ -49,6 +50,7 @@
                         type="email" 
                         id="email" 
                         name="email" 
+                        class="form-input"
                         placeholder="your@email.com"
                         required
                     >
@@ -57,7 +59,7 @@
                 <!-- Experience Level -->
                 <div class="form-group">
                     <label class="form-label" for="experience">Experience Level</label>
-                    <select id="experience" name="experience" style="background-color: transparent; border: none; border-bottom: 2px solid var(--border); color: var(--foreground); font-family: inherit; font-size: var(--text-4xl); font-weight: 700; text-transform: uppercase; letter-spacing: -0.01em; padding: var(--space-4) 0; width: 100%; transition: all var(--duration-normal); cursor: pointer;" required>
+                    <select id="experience" name="experience" class="form-input" style="background-color: transparent; border: none; border-bottom: 2px solid var(--border); color: var(--foreground); font-family: inherit; font-size: var(--text-4xl); font-weight: 700; text-transform: uppercase; letter-spacing: -0.01em; padding: var(--space-4) 0; width: 100%; transition: all var(--duration-normal); cursor: pointer;" required>
                         <option value="" style="background-color: var(--background); color: var(--foreground);">Select Level</option>
                         <option value="beginner" style="background-color: var(--background); color: var(--foreground);">Beginner</option>
                         <option value="intermediate" style="background-color: var(--background); color: var(--foreground);">Intermediate</option>
@@ -71,6 +73,7 @@
                     <textarea 
                         id="message" 
                         name="message" 
+                        class="form-textarea"
                         placeholder="What mountains are you dreaming of conquering?"
                         style="font-size: var(--text-2xl);"
                     ></textarea>
@@ -83,6 +86,7 @@
                         type="tel" 
                         id="phone" 
                         name="phone" 
+                        class="form-input"
                         placeholder="+1 (555) 123-4567"
                     >
                 </div>
@@ -90,7 +94,7 @@
                 <!-- Preferred Contact -->
                 <div class="form-group">
                     <label class="form-label" for="contact-method">Preferred Contact Method</label>
-                    <select id="contact-method" name="contact-method" style="background-color: transparent; border: none; border-bottom: 2px solid var(--border); color: var(--foreground); font-family: inherit; font-size: var(--text-4xl); font-weight: 700; text-transform: uppercase; letter-spacing: -0.01em; padding: var(--space-4) 0; width: 100%; transition: all var(--duration-normal); cursor: pointer;">
+                    <select id="contact-method" name="contact-method" class="form-input" style="background-color: transparent; border: none; border-bottom: 2px solid var(--border); color: var(--foreground); font-family: inherit; font-size: var(--text-4xl); font-weight: 700; text-transform: uppercase; letter-spacing: -0.01em; padding: var(--space-4) 0; width: 100%; transition: all var(--duration-normal); cursor: pointer;">
                         <option value="" style="background-color: var(--background); color: var(--foreground);">Select Method</option>
                         <option value="email" style="background-color: var(--background); color: var(--foreground);">Email</option>
                         <option value="phone" style="background-color: var(--background); color: var(--foreground);">Phone</option>
@@ -211,24 +215,25 @@
 
     <!-- Scripts -->
     <script src="JS/marquee.js"></script>
+    <script src="JS/forms.js"></script>
     <script>
-        // Handle contact form submission
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Hide form
-            const formFields = document.querySelectorAll('.form-group');
-            formFields.forEach(field => field.style.display = 'none');
-            
-            // Show success message
-            document.getElementById('success-message').style.display = 'block';
-            
-            // Reset form after 3 seconds
-            setTimeout(() => {
-                this.reset();
-                formFields.forEach(field => field.style.display = 'flex');
-                document.getElementById('success-message').style.display = 'none';
-            }, 3000);
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    let isValid = true;
+                    const inputs = form.querySelectorAll('input, textarea, select');
+                    inputs.forEach(input => {
+                        if (!FormValidation.validateField(input)) {
+                            isValid = false;
+                        }
+                    });
+                    if (isValid) {
+                        FormValidation.showFormSuccess(form, 'Thanks for applying! We will contact you within 24 hours.', 3000);
+                    }
+                });
+            }
         });
     </script>
 </body>

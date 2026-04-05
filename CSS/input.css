@@ -1,0 +1,439 @@
+/* ============================================================================
+   TAILWIND IMPORTS
+   ============================================================================ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================================
+   KINETIC TYPOGRAPHY DESIGN SYSTEM - CUSTOM TOKENS & COMPONENTS
+   This file is processed by Tailwind's PostCSS. Custom CSS extends Tailwind.
+   ============================================================================ */
+
+/* COLOR TOKENS */
+:root {
+    /* Foundation Colors */
+    --background: #09090B;
+    --foreground: #FAFAFA;
+    --muted: #27272A;
+    --muted-foreground: #A1A1AA;
+    
+    /* Accent Strategy */
+    --accent: #DFE104;
+    --accent-foreground: #000000;
+    --border: #3F3F46;
+    
+    /* Spacing Base Unit (4px) */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-20: 5rem;
+    --space-24: 6rem;
+    --space-32: 8rem;
+    
+    /* Animation Timing */
+    --duration-fast: 200ms;
+    --duration-normal: 300ms;
+    --duration-slow: 500ms;
+    --duration-slower: 800ms;
+    --easing-default: cubic-bezier(0.4, 0, 0.2, 1);
+    --easing-in-out: ease-in-out;
+    --easing-linear: linear;
+}
+
+/* ============================================================================
+   GLOBAL STYLES
+   ============================================================================ */
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply bg-background text-foreground font-sans;
+        line-height: 1.6;
+        overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-bold uppercase;
+        letter-spacing: -0.02em;
+        line-height: 0.9;
+    }
+
+    p {
+        @apply text-muted-foreground;
+        line-height: 1.5;
+    }
+
+    a {
+        @apply text-foreground transition-colors;
+    }
+}
+
+/* ============================================================================
+   COMPONENT STYLES
+   ============================================================================ */
+
+@layer components {
+    /* Navigation */
+    .nav-link {
+        @apply text-sm font-bold uppercase tracking-wide text-foreground transition-colors border-b-2 border-transparent;
+        
+        &:hover,
+        &.active {
+            @apply text-accent border-accent;
+        }
+    }
+
+    /* Buttons */
+    .btn-base {
+        @apply inline-flex items-center justify-center whitespace-nowrap h-14 px-8 text-sm font-bold uppercase border-2 border-transparent rounded-none transition-all duration-normal;
+    }
+
+    .btn-primary {
+        @apply btn-base bg-accent text-accent-foreground border-accent hover:scale-105 active:scale-95;
+        
+        &:hover {
+            @apply shadow-lg;
+            box-shadow: 0 0 20px rgba(223, 225, 4, 0.3);
+        }
+    }
+
+    .btn-outline {
+        @apply btn-base bg-transparent text-foreground border-border;
+        
+        &:hover {
+            @apply bg-foreground text-background;
+        }
+    }
+
+    .btn-ghost {
+        @apply btn-base bg-transparent text-foreground border-transparent;
+        
+        &:hover {
+            @apply text-accent;
+        }
+    }
+
+    /* Typography Utilities */
+    .text-display-hero {
+        @apply font-bold text-display-hero uppercase;
+        letter-spacing: -0.03em;
+    }
+
+    .text-display-lg {
+        @apply font-bold text-display-lg uppercase;
+        letter-spacing: -0.02em;
+    }
+
+    .text-display-md {
+        @apply font-bold text-display-md uppercase;
+        letter-spacing: -0.02em;
+    }
+
+    .text-heading-lg {
+        @apply font-bold text-heading-lg uppercase;
+        letter-spacing: -0.01em;
+    }
+
+    .text-heading-md {
+        @apply font-bold text-heading-md uppercase;
+        letter-spacing: -0.01em;
+    }
+
+    .text-body-lg {
+        @apply text-body-lg font-medium;
+    }
+
+    .text-body {
+        @apply text-body font-normal;
+    }
+
+    .text-label {
+        @apply text-xs font-bold uppercase tracking-widest text-muted-foreground;
+    }
+
+    /* Cards */
+    .card-base {
+        @apply border-2 border-border bg-background p-12 rounded-none transition-all duration-normal;
+        
+        &:hover {
+            @apply bg-accent border-accent;
+            
+            h3, p, .card-label {
+                @apply text-accent-foreground;
+            }
+        }
+    }
+
+    .card-title {
+        @apply text-3xl font-bold uppercase -tracking-tightest mb-4 text-foreground transition-colors;
+        letter-spacing: -0.01em;
+    }
+
+    .card-description {
+        @apply text-base text-muted-foreground transition-colors;
+    }
+
+    .card-label {
+        @apply text-xs font-semibold uppercase tracking-wide text-muted-foreground transition-colors;
+    }
+
+    /* Forms */
+    .form-input {
+        @apply bg-transparent border-0 border-b-2 border-border text-foreground font-bold text-4xl uppercase -tracking-tight p-4 p-0 w-full transition-colors;
+        letter-spacing: -0.01em;
+        
+        &:focus {
+            @apply outline-none border-accent;
+        }
+
+        &::placeholder {
+            @apply text-muted uppercase;
+            opacity: 1;
+        }
+    }
+
+    .form-textarea {
+        @apply form-input text-2xl min-h-[200px] resize-none;
+    }
+
+    .form-group {
+        @apply flex flex-col gap-8 mb-12;
+    }
+
+    .form-label {
+        @apply text-xs font-bold uppercase tracking-widest text-muted-foreground;
+    }
+
+    /* Marquee */
+    .marquee-base {
+        @apply overflow-hidden w-full bg-background border-t-2 border-b-2 border-border;
+    }
+
+    .marquee-scroll {
+        @apply flex gap-8 whitespace-nowrap animate-marquee;
+    }
+
+    .marquee-item {
+        @apply inline-flex items-center gap-4 flex-shrink-0 text-2xl font-bold uppercase;
+        letter-spacing: -0.01em;
+    }
+
+    .marquee-item-large {
+        @apply text-6xl text-accent;
+    }
+
+    .marquee-separator {
+        @apply text-accent font-black px-4;
+    }
+
+    /* Hero Section */
+    .hero-base {
+        @apply flex flex-col justify-center items-start min-h-screen p-8 relative overflow-hidden;
+    }
+
+    .hero-bg-number {
+        @apply absolute font-bold text-8xl text-muted opacity-10 uppercase;
+        line-height: 0.8;
+        letter-spacing: -0.02em;
+        z-index: 1;
+    }
+
+    .hero-content {
+        @apply relative z-10;
+    }
+
+    /* Sticky Cards */
+    .sticky-card {
+        @apply sticky;
+        top: 5rem;
+    }
+
+    .sticky-card:nth-child(1) { @apply z-30; }
+    .sticky-card:nth-child(2) { @apply z-20; }
+    .sticky-card:nth-child(3) { @apply z-10; }
+
+    /* Section Styles */
+    .section-base {
+        @apply py-32 px-8;
+    }
+
+    .section-accent {
+        @apply bg-accent text-accent-foreground;
+        
+        h1, h2, h3, h4, h5, h6, p {
+            @apply text-accent-foreground;
+        }
+    }
+
+    .section-muted {
+        @apply bg-muted;
+    }
+
+    /* Container Utilities */
+    .container-base {
+        @apply max-w-[95vw] mx-auto px-8;
+    }
+
+    .container-tight {
+        @apply max-w-2xl mx-auto;
+    }
+
+    /* Grid Utilities */
+    .grid-auto {
+        @apply grid gap-8;
+    }
+
+    .grid-cols-auto {
+        @apply grid grid-cols-1 gap-8;
+        
+        @media (min-width: 768px) {
+            @apply md:grid-cols-2 md:gap-12;
+        }
+        
+        @media (min-width: 1024px) {
+            @apply lg:grid-cols-3;
+        }
+    }
+
+    /* Hover Animations */
+    .hover-scale {
+        @apply transition-transform duration-normal hover:scale-105;
+    }
+
+    .hover-translate-x {
+        @apply transition-transform duration-normal hover:translate-x-8;
+    }
+
+    .hover-opacity {
+        @apply transition-opacity duration-normal hover:opacity-100;
+    }
+
+    /* Dividers */
+    .divider-top {
+        @apply border-t-2 border-border;
+    }
+
+    .divider-bottom {
+        @apply border-b-2 border-border;
+    }
+
+    .divider-accent {
+        @apply border-t-2 border-accent;
+    }
+
+    /* Accent Utilities */
+    .text-accent {
+        @apply text-accent;
+    }
+
+    .bg-accent-section {
+        @apply bg-accent text-accent-foreground;
+    }
+
+    .border-accent-left {
+        @apply border-l-4 border-accent;
+    }
+}
+
+/* ============================================================================
+   TOOLTIP STYLES (for tooltip.js)
+   ============================================================================ */
+
+[data-tooltip] {
+    @apply relative cursor-help;
+}
+
+.tooltip {
+    @apply absolute bottom-full left-1/2 -translate-x-1/2 -translate-y-2 px-3 py-1.5 bg-border text-foreground text-xs font-semibold uppercase whitespace-nowrap opacity-0 pointer-events-none transition-opacity duration-normal z-50;
+    
+    &::after {
+        content: '';
+        @apply absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-border;
+    }
+}
+
+[data-tooltip]:hover .tooltip {
+    @apply opacity-100 pointer-events-auto;
+}
+
+/* ============================================================================
+   FORM VALIDATION STYLES
+   ============================================================================ */
+
+.input-error {
+    @apply border-b-red-500 border-b-2;
+}
+
+.input-success {
+    @apply border-b-accent border-b-2;
+}
+
+.error-message {
+    @apply text-red-500 text-sm font-semibold uppercase mt-1;
+    letter-spacing: 0.05em;
+}
+
+.success-message {
+    @apply text-accent text-sm font-semibold uppercase mt-1;
+    letter-spacing: 0.05em;
+}
+
+/* ============================================================================
+   REDUCED MOTION
+   ============================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        @apply !animate-none !transition-none;
+    }
+
+    .marquee-scroll {
+        @apply animate-none whitespace-normal;
+    }
+}
+
+/* ============================================================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================================================ */
+
+@media (max-width: 767px) {
+    .hero-base {
+        @apply min-h-[80vh];
+    }
+
+    nav {
+        @apply flex-col gap-4 text-center;
+    }
+
+    nav ul {
+        @apply flex-col gap-4;
+    }
+
+    .card-base {
+        @apply p-8;
+    }
+
+    .form-input {
+        @apply text-2xl;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container-base {
+        @apply max-w-[90vw];
+    }
+
+    .hero-base {
+        @apply min-h-screen p-12;
+    }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "mountainpulse",
+  "version": "1.0.0",
+  "description": "MountainPulse Adventure Club - Kinetic Typography Design System with Tailwind CSS",
+  "main": "index.js",
+  "scripts": {
+    "build": "tailwindcss -i ./CSS/input.css -o ./CSS/style.css",
+    "watch": "tailwindcss -i ./CSS/input.css -o ./CSS/style.css --watch",
+    "dev": "concurrently \"npm run watch\" \"echo 'Open pages in browser'\"",
+    "production": "cross-env NODE_ENV=production npm run build"
+  },
+  "keywords": [
+    "adventure",
+    "mountaineering",
+    "tailwind",
+    "kinetic-typography"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^3.4.0",
+    "postcss": "^8.4.31",
+    "autoprefixer": "^10.4.16",
+    "@tailwindcss/forms": "^0.5.7",
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3"
+  },
+  "dependencies": {
+    "@floating-ui/dom": "^1.5.4"
+  }
+}
