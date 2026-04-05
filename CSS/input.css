@@ -86,11 +86,11 @@
     /* Navigation */
     .nav-link {
         @apply text-sm font-bold uppercase tracking-wide text-foreground transition-colors border-b-2 border-transparent;
-        
-        &:hover,
-        &.active {
-            @apply text-accent border-accent;
-        }
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+        @apply text-accent border-accent;
     }
 
     /* Buttons */
@@ -100,61 +100,75 @@
 
     .btn-primary {
         @apply btn-base bg-accent text-accent-foreground border-accent hover:scale-105 active:scale-95;
-        
-        &:hover {
-            @apply shadow-lg;
-            box-shadow: 0 0 20px rgba(223, 225, 4, 0.3);
-        }
+    }
+
+    .btn-primary:hover {
+        @apply shadow-lg;
+        box-shadow: 0 0 20px rgba(223, 225, 4, 0.3);
     }
 
     .btn-outline {
         @apply btn-base bg-transparent text-foreground border-border;
-        
-        &:hover {
-            @apply bg-foreground text-background;
-        }
+    }
+
+    .btn-outline:hover {
+        @apply bg-foreground text-background;
     }
 
     .btn-ghost {
         @apply btn-base bg-transparent text-foreground border-transparent;
-        
-        &:hover {
-            @apply text-accent;
-        }
+    }
+
+    .btn-ghost:hover {
+        @apply text-accent;
     }
 
     /* Typography Utilities */
     .text-display-hero {
-        @apply font-bold text-display-hero uppercase;
+        @apply font-bold uppercase;
+        font-size: clamp(3rem, 12vw, 14rem);
+        line-height: 0.85;
         letter-spacing: -0.03em;
     }
 
     .text-display-lg {
-        @apply font-bold text-display-lg uppercase;
+        @apply font-bold uppercase;
+        font-size: clamp(2.5rem, 8vw, 6rem);
+        line-height: 0.9;
         letter-spacing: -0.02em;
     }
 
     .text-display-md {
-        @apply font-bold text-display-md uppercase;
+        @apply font-bold uppercase;
+        font-size: clamp(2rem, 6vw, 4rem);
+        line-height: 0.9;
         letter-spacing: -0.02em;
     }
 
     .text-heading-lg {
-        @apply font-bold text-heading-lg uppercase;
+        @apply font-bold uppercase;
+        font-size: clamp(1.875rem, 5vw, 3rem);
+        line-height: 1;
         letter-spacing: -0.01em;
     }
 
     .text-heading-md {
-        @apply font-bold text-heading-md uppercase;
+        @apply font-bold uppercase;
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
+        line-height: 1.1;
         letter-spacing: -0.01em;
     }
 
     .text-body-lg {
-        @apply text-body-lg font-medium;
+        @apply font-medium;
+        font-size: clamp(1.125rem, 2vw, 1.5rem);
+        line-height: 1.5;
     }
 
     .text-body {
-        @apply text-body font-normal;
+        @apply font-normal;
+        font-size: clamp(1rem, 1.5vw, 1.25rem);
+        line-height: 1.6;
     }
 
     .text-label {
@@ -164,14 +178,15 @@
     /* Cards */
     .card, .card-base {
         @apply border-2 border-border bg-background p-12 rounded-none transition-all duration-normal;
-        
-        &:hover {
-            @apply bg-accent border-accent;
-            
-            h3, p, .card-label {
-                @apply text-accent-foreground;
-            }
-        }
+    }
+
+    .card:hover, .card-base:hover {
+        @apply bg-accent border-accent;
+    }
+
+    .card:hover h3, .card:hover p, .card:hover .card-label,
+    .card-base:hover h3, .card-base:hover p, .card-base:hover .card-label {
+        @apply text-accent-foreground;
     }
 
     .card-title {
@@ -192,19 +207,19 @@
     .form-input {
         @apply bg-transparent border-0 border-b-2 border-border text-foreground font-bold text-4xl uppercase -tracking-tight p-4 p-0 w-full transition-colors;
         letter-spacing: -0.01em;
-        
-        &:focus {
-            @apply outline-none border-accent;
-        }
+    }
 
-        &::placeholder {
-            @apply text-muted uppercase;
-            opacity: 1;
-        }
+    .form-input:focus {
+        @apply outline-none border-accent;
+    }
+
+    .form-input::placeholder {
+        @apply text-muted uppercase;
+        opacity: 1;
     }
 
     .form-textarea {
-        @apply form-input text-2xl min-h-[200px] resize-none;
+        @apply text-2xl min-h-[200px] resize-none;
     }
 
     .form-group {
@@ -333,10 +348,6 @@
     }
 
     /* Accent Utilities */
-    .text-accent {
-        @apply text-accent;
-    }
-
     .bg-accent-section {
         @apply bg-accent text-accent-foreground;
     }
@@ -356,11 +367,11 @@
 
 .tooltip {
     @apply absolute bottom-full left-1/2 -translate-x-1/2 -translate-y-2 px-3 py-1.5 bg-border text-foreground text-xs font-semibold uppercase whitespace-nowrap opacity-0 pointer-events-none transition-opacity duration-normal z-50;
-    
-    &::after {
-        content: '';
-        @apply absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-border;
-    }
+}
+
+.tooltip::after {
+    content: '';
+    @apply absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-border;
 }
 
 [data-tooltip]:hover .tooltip {

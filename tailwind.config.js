@@ -5,7 +5,7 @@ module.exports = {
     "./home.html",
     "./about.html",
     "./contact.html",
-    "./**/*.js",
+    "./JS/**/*.js",
   ],
   theme: {
     extend: {
